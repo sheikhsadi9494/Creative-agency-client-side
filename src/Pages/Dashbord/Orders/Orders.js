@@ -19,7 +19,7 @@ const Orders = () => {
     <Container>
       <Grid container spacing={2}>
         {orders.map((order) => (
-          <Order key={order._id} order={order}></Order>
+          <Order key={order._id} order={order} orders={orders} setOrders={setOrders}></Order>
         ))}
       </Grid>
       <div className="content">

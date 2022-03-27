@@ -2,9 +2,26 @@ import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } f
 import { Box } from "@mui/system";
 import React from "react";
 
-const Order = ({ order }) => {
+const Order = ({ order, orders, setOrders}) => {
   const { clientName, email, serviceName, img, _id, discription, price, DeleveryTime } = order;
-  console.log(email)
+
+  const handleDeleteOrder = (id) => {
+    const proceed = window.confirm('Are Sure To Cancle This Order?');
+    if(proceed){
+      const url = `http://localhost:5000/orders/${id}`
+      fetch(url, {
+        method: 'DELETE',
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data.deletedCount > 0){
+          alert('Order Deleted SuccessFully');
+          const remaining = orders.filter(order => order._id !== id);
+          setOrders(remaining);
+        }
+      });
+    }
+  }
 
   return (
     <Grid item xs={12} md={6} lg={4}>
@@ -29,7 +46,7 @@ const Order = ({ order }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button variant="text" sx={{color: 'red'}}>cancel</Button>
+          <Button onClick={() => handleDeleteOrder(_id)} variant="text" sx={{color: 'red'}}>cancel</Button>
         </CardActions>
       </Card>
     </Grid>
