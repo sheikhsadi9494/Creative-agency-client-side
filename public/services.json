@@ -1,0 +1,27 @@
+[
+    {
+        "img": "https://i.ibb.co/BB0m7dz/service1.png",
+        "serviceName": "Web & Mobile design",
+        "price": 1200,
+        "time": "2 days",
+        "aboutService": "full web and mobile application design",
+        "discription": "We craft stunning and amazing web ui, using a well drrafted UX to fit your project"
+    },
+    {
+        "img": "https://i.ibb.co/Kqw1WLj/service2.png",
+        "serviceName": "Graphic design",
+        "price": 800,
+        "time": "2 days",
+        "aboutService": "Design that client say",
+        "discription": "Amazing flyers, social media posten brand representations that make your brand outstading"
+
+    },
+    {
+        "img": "https://i.ibb.co/xGG9gHV/service3.png",
+        "serviceName": "Web development",
+        "price": 3800,
+        "time": "7 days",
+        "aboutService": "Full Web application development with advanced technology and languge",
+        "discription": "With well written codes, we build amazing apps for all platforms, mobile and web apps in general."
+    }
+]
