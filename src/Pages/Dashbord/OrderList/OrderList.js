@@ -8,7 +8,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { Box } from "@mui/system";
 import { Button } from "@mui/material";
 
 const OrderList = () => {
@@ -40,7 +39,34 @@ const OrderList = () => {
       .then((data) => setOrders(data));
   }, []);
 
-  const 
+  const handleDeleteOrder = (id) => {
+    const proceed = window.confirm('Are You Sure To Delete This File?');
+    if(proceed){
+      const url = `http://localhost:5000/allOrders/${id}`;
+      fetch(url, {
+        method: 'DELETE'
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data.deletedCount > 0){
+          alert('Delete Order SuccessFully')
+          const remaining = orders.filter(order => order._id !== id);
+          setOrders(remaining)
+        }
+      })
+    }
+  }
+
+  const handleUpdate = (id) => {
+    const url = `http://localhost:5000/allOrders/${id}`;
+    fetch(url, {
+      method: 'PUT',
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+    })
+  }
 
   return (
     <div>
@@ -53,6 +79,7 @@ const OrderList = () => {
               <StyledTableCell align="right">Email</StyledTableCell>
               <StyledTableCell align="right">Service</StyledTableCell>
               <StyledTableCell align="right">Status</StyledTableCell>
+              <StyledTableCell align="right">Update Status</StyledTableCell>
               <StyledTableCell align="right">Delete</StyledTableCell>
             </TableRow>
           </TableHead>
@@ -64,7 +91,8 @@ const OrderList = () => {
                 </StyledTableCell>
                 <StyledTableCell align="right">{order.email}</StyledTableCell>
                 <StyledTableCell align="right">{order.serviceName}</StyledTableCell>
-                <StyledTableCell align="right">{order.protein}</StyledTableCell>
+                <StyledTableCell align="right">{order.status}</StyledTableCell>
+                <StyledTableCell align="right"><Button onClick={() => handleUpdate(order._id)}>Update</Button></StyledTableCell>
                 <StyledTableCell align="right"><Button onClick={() => handleDeleteOrder(order._id)}>Delete</Button></StyledTableCell>
               </StyledTableRow>
             ))}

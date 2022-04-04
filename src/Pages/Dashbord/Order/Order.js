@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import React from "react";
 
 const Order = ({ order, orders, setOrders}) => {
-  const { clientName, email, serviceName, img, _id, discription, price, DeleveryTime } = order;
+  const { clientName, email, serviceName, img, _id, discription, price, DeleveryTime, status} = order;
 
   const handleDeleteOrder = (id) => {
     const proceed = window.confirm('Are Sure To Cancle This Order?');
@@ -39,7 +39,8 @@ const Order = ({ order, orders, setOrders}) => {
           <Typography gutterBottom variant="body1" component="div">
             Email: {email} <br />
             price: $ {price} <br />
-            Delevery Time: {DeleveryTime}
+            Delevery Time: {DeleveryTime} <br />
+            Status: {status}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {discription}

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import Order from "../Order/Order";
+import OrderList from "../OrderList/OrderList";
 
 const Orders = () => {
   const { user } = useAuth();
