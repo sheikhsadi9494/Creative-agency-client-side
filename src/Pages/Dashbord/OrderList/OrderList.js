@@ -37,7 +37,7 @@ const OrderList = () => {
     fetch(`http://localhost:5000/allOrders`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
-  }, []);
+  }, [orders]);
 
   const handleDeleteOrder = (id) => {
     const proceed = window.confirm('Are You Sure To Delete This File?');
@@ -60,11 +60,15 @@ const OrderList = () => {
   const handleUpdate = (id) => {
     const url = `http://localhost:5000/allOrders/${id}`;
     fetch(url, {
-      method: 'PUT',
+      method: "PUT"
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
+      if(data.deletedCount > 0) {
+        alert('Update Order Successfully')
+        const remaining = orders.filter(order => order._id !== id);
+        setOrders(remaining);
+      }
     })
   }
 
