@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Link, Outlet } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { Button, ListItemButton } from '@mui/material';
 import useAuth from '../../../hooks/useAuth';
 
 const drawerWidth = 240;
@@ -29,16 +29,31 @@ function Dashbord(props) {
       <Toolbar />
       <Divider />
       <nav>
-        <Link to="/services"><Button variant="text">services</Button></Link> <br />
-        <Link to="/dashbord"><Button variant="text">My Orders</Button></Link> <br />
-        <Link to="review"><Button variant="text">Review</Button></Link> <br />
+        <Link style={{textDecoration: 'none', color: 'black', fontSize: "xxl-large,"}}  to="/dashbord">
+          <ListItemButton style={{paddingLeft: '40px'}} variant="text">My Orders</ListItemButton>
+        </Link>
+        <Link style={{textDecoration: 'none', color: 'black', fontSize: "xxl-large,"}}  to="review">
+          <ListItemButton style={{paddingLeft: '40px'}} variant="text">Make Review</ListItemButton>
+        </Link>
         {admin &&
         <>
-          <Link to="makeAdmin"><Button variant="text">Make Admin</Button></Link><br />
-          <Link to="orderList"><Button variant="text">Order List</Button></Link><br />
-          <Link to="addService"><Button variant="text">Add Service</Button></Link><br />
+          <Link style={{textDecoration: 'none', color: 'black', fontSize: "xxl-large,"}}  to="makeAdmin">
+             <ListItemButton style={{paddingLeft: '40px'}} variant="text">Make Admin</ListItemButton>
+          </Link>
+          <Link style={{textDecoration: 'none', color: 'black', fontSize: "xxl-large,"}}  to="orderList">
+             <ListItemButton style={{paddingLeft: '40px'}} variant="text">Order List</ListItemButton>
+          </Link>
+          <Link style={{textDecoration: 'none', color: 'black', fontSize: "xxl-large,"}}  to="addService">
+             <ListItemButton style={{paddingLeft: '40px'}} variant="text">Add Service</ListItemButton>
+          </Link>
+          <Link style={{textDecoration: 'none', color: 'black', fontSize: "xxl-large,"}}  to="deleteService">
+             <ListItemButton style={{paddingLeft: '40px'}} variant="text">Delete Service</ListItemButton>
+          </Link>
         </>
         }
+        <Link style={{textDecoration: 'none', color: 'black', fontSize: "xxl-large,"}}  to="/services">
+          <ListItemButton style={{paddingLeft: '40px'}} variant="text">Back To Home</ListItemButton>
+        </Link>
       </nav>
     </div>
   );

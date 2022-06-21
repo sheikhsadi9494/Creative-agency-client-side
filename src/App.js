@@ -3,6 +3,7 @@ import AuthProvider from './Context/AuthProvider/AuthProvider';
 import AdminRoute from './Pages/AdminRoute/AdminRoute';
 import AddService from './Pages/Dashbord/AddService/AddService';
 import Dashbord from './Pages/Dashbord/Dashbord/Dashbord';
+import DeleteService from './Pages/Dashbord/DeleteService/DeleteService';
 import MakeAdmin from './Pages/Dashbord/MakeAdmin/MakeAdmin';
 import OrderList from './Pages/Dashbord/OrderList/OrderList';
 import Orders from './Pages/Dashbord/Orders/Orders';
@@ -29,6 +30,7 @@ function App() {
             <Route path='makeAdmin' element={<AdminRoute><MakeAdmin/></AdminRoute>}/>
             <Route path='orderList' element={<AdminRoute><OrderList/></AdminRoute>}/>
             <Route path='addService' element={<AdminRoute><AddService/></AdminRoute>}/>
+            <Route path='deleteService' element={<AdminRoute><DeleteService/></AdminRoute>}/>
           </Route>
           <Route path='login' element={<Login></Login>}/>
           <Route path='register' element={<Register></Register>}/>

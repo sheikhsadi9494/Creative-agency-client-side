@@ -17,7 +17,7 @@ const Services = () => {
       </Typography>
     
     <Container sx={{marginY: '80px'}}>
-        <Grid container spacing={2}>
+        <Grid container>
             {
               services.map(service => <Service key={service.serviceName} service={service}></Service>)
             }
