@@ -4,7 +4,7 @@ import React from "react";
 
 const ServicesHeader = () => {
   return (
-    <Box sx={{backgroundColor: '#F6CB3A', paddingBottom: '80px', paddingTop: '40px'}}>
+    <Box sx={{backgroundColor: '#FBD062', paddingBottom: '80px', paddingTop: '40px'}}>
       <Box sx={{display: 'flex',justifyContent: 'space-evenly', alignItems: 'center'}}>
         <Box>
           <Typography  sx={{fontWeight: 'bold'}} variant="h3" gutterBottom component="div">

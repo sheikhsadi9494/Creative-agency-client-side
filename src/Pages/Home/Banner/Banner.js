@@ -3,7 +3,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <Box sx={{backgroundColor: "#FBD062", paddingBottom: '130px', paddingTop: '20px', paddingX: '30px', clipPath: {lg: 'polygon(0 0, 100% 0%, 100% 75%, 0 100%)', xs: 'polygon(0 0, 100% 0%, 100% 88%, 0 100%)'}}}>
+    <Box sx={{ backgroundColor: "#FBD062", paddingBottom: '140px', paddingTop: '50px', paddingX: '30px', clipPath: {lg: 'polygon(0 0, 100% 0%, 100% 75%, 0 100%)', xs: 'polygon(0 0, 100% 0%, 100% 88%, 0 100%)'}}}>
         <Grid sx={{alignItems: 'center', justifyContent: 'space-evenly'}} container rowSpacing={1} >
           <Grid item xs={12} lg={3.5}>
           <Box sx={{marginBottom: {xs: 2, lg: 0}}}>
@@ -17,7 +17,7 @@ const Banner = () => {
              Quos blanditiis tenetur unde suscipit, quam beatae 
              rerum inventore consectetur, neque doloribus .
            </Typography>
-           <Button sx={{backgroundColor: 'black'}} variant="contained">haire us</Button>
+           <Button sx={{backgroundColor: 'black', textTransform: 'capitalize', px: 6, py: 1, ':hover': {backgroundColor: 'black'}}} variant="contained">haire us</Button>
         </Box>
           </Grid>
           <Grid item xs={12} lg={5}>

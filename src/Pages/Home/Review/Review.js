@@ -1,25 +1,45 @@
-import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Grid, Rating, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 
 const Review = ({ review }) => {
-  const { displayName, email, img, comment } = review;
+  const { displayName, email, img, comment, busness, rating} = review;
 
   return (
-    <Grid item xs={8} md={6} lg={4}>
-      <Card sx={{ maxWidth: 345, marginY: '50px'}}>
-        <Box style={{ marginY: "40px", textAlign: 'center'}}>
-          <img
-            style={{ width: "30%", borderRadius: 16, marginTop: "20px" }}
-            src={img}
-            alt=""
-          />
+    <Grid item xs={12} md={4} lg={4}>
+      <Card sx={{ px: 5, height: "340px", borderRadius: 5}} elevation={12}>
+        <Box sx={{ display: "flex", alignItems: "center", pt: 1}}>
+          <Box sx={{ width: "30%" }}>
+            <img
+              style={{ width: "100%", borderRadius: 16, marginTop: "20px" }}
+              src={img}
+              alt=""
+            />
+          </Box>
+          <Box sx={{ marginLeft: 3 }}>
+            <Typography
+              sx={{ fontWeight: "700", fontSize: "17px" }}
+              variant="subtitle1"
+              gutterBottom
+            >
+              {displayName}
+            </Typography>
+            <Typography
+              sx={{ fontWeight: "600", marginTop: "-10px" }}
+              variant="subtitle2"
+              gutterBottom
+            >
+              {busness}
+            </Typography>
+            <Stack spacing={1}>
+              <Rating name="size-small" defaultValue={rating} size="small" readOnly  />
+              {/* <Rating name="size-medium" defaultValue={2} />
+              <Rating name="size-large" defaultValue={2} size="large" /> */}
+            </Stack>
+          </Box>
         </Box>
-          <Typography sx={{textAlign: 'center', fontWeight: 'bold', marginY: '10px'}} variant="h5" gutterBottom>
-            {displayName}
-          </Typography>
-        <Box>
-          <Typography sx={{ textAlign: "center" }} variant="body1" gutterBottom>
+        <Box sx={{mt: 2.5}}>
+          <Typography variant="body1" gutterBottom>
             {comment}
           </Typography>
         </Box>

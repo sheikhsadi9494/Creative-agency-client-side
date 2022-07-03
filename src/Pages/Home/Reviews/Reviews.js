@@ -11,11 +11,11 @@ const Reviews = () => {
     }, [])
   return (
     <Box>
-      <Typography sx={{fontWeight: 'bold', textAlign: 'center'}} variant="h4" gutterBottom component="div">
+      <Typography sx={{fontWeight: 'bold', textAlign: 'center', pb: 7}} variant="h4" gutterBottom component="div">
         Our <span style={{color: '#08C137'}} >Clients</span> Says
       </Typography>
       <Container>
-       <Grid container spacing={2}>
+       <Grid sx={{mb: 12}} container spacing={4}>
           {
             reviews.map(review => <Review
              key={review._id}

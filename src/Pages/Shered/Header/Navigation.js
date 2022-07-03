@@ -56,7 +56,7 @@ const Navigation = () => {
             sx={{ mr: 2, display: { xs: "none", md: "flex" }, marginLeft: '80px'}}
           >
           <NavLink to='/'>
-           <img style={{width: '150px', padding: '12px'}} src="https://i.ibb.co/Xy515kT/logo.png" alt="" />
+           <img style={{width: '170px', padding: '12px'}} src="https://i.ibb.co/Xy515kT/logo.png" alt="" />
          </NavLink>
           </Typography>
 
@@ -119,44 +119,47 @@ const Navigation = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex", justifyContent: "flex-end"}, marginRight: '50px'}}>
             <NavLink style={{ textDecoration: "none" }} to="/">
-              <Button style={{ color: "black", marginRight: 20}}>Home</Button>
+              <Box style={{ color: "black", marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Home</Box>
             </NavLink>
 
             <NavLink style={{ textDecoration: "none" }} to="/">
-              <Button style={{ color: "black", marginRight: 20}}>Our Portfolio</Button>
+              <Box style={{ color: "black", marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Our Portfolio</Box>
             </NavLink>
 
             <NavLink style={{ textDecoration: "none" }} to="/services">
-              <Button style={{ color: "black",  marginRight: 20}}>Services</Button>
+              <Box style={{ color: "black",  marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Services</Box>
             </NavLink>
 
             <NavLink style={{ textDecoration: "none" }} to="/services">
-              <Button style={{ color: "black",  marginRight: 20}}>Our Team</Button>
+              <Box style={{ color: "black",  marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Our Team</Box>
             </NavLink>
 
             <NavLink style={{ textDecoration: "none" }} to="/services">
-              <Button style={{ color: "black" }}>Contact Us</Button>
+              <Box style={{ color: "black" , textTransform: 'capitalize', fontSize: "16px"}}>Contact Us</Box>
             </NavLink>
           </Box>
 
-          <Box sx={{ flexGrow: 0, marginRight: {lg: '100px'}}}>
-            <Tooltip title="Open settings">
+          {
+            user.email ? 
+
+            <Box sx={{ flexGrow: 0, marginRight: {lg: '100px'}}}>
+            <Tooltip title="Go to dashbord">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt={user.displayName} src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
-              sx={{ mt: "45px" }}
+              sx={{ mt: "50px"}}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
                 vertical: "top",
-                horizontal: "right",
+                horizontal: "center",
               }}
               keepMounted
               transformOrigin={{
                 vertical: "top",
-                horizontal: "right",
+                horizontal: "center",
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
@@ -181,6 +184,13 @@ const Navigation = () => {
            
             </Menu>
           </Box>
+          :
+          <NavLink  style={{textDecoration: 'none'}} to='/login'>
+                <Button sx={{ flexGrow: 0, marginRight: {lg: '100px'}, backgroundColor: 'black', ':hover': {backgroundColor: 'black'}, py: 1, px: 4}} variant="contained">
+                    <Typography style={{color: 'white', textTransform: 'capitalize'}} textAlign="center">Login</Typography>
+                </Button>
+              </NavLink>   
+          }
         </Toolbar>
       </Container>
     </AppBar>

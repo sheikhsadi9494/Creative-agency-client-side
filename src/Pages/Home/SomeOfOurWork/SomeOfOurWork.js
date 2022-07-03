@@ -10,13 +10,13 @@ import "swiper/css/pagination";
 import "./Swiper.css";
 
 // import required modules
-import { EffectCoverflow, Pagination } from "swiper";
+import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 
 export default function App() {
   return (
-    <Box style={{ backgroundColor: "#111430" }}>
+    <Box sx={{mb: 13}} style={{ backgroundColor: "#111430" }}>
       <Box sx={{paddingTop: 10, paddingBottom: 5}}>
         <Typography variant="h4" sx={{color: 'white', fontWeight: 'bold', textAlign: 'center'}} gutterBottom component="div">
           Here are some of <span style={{color: '#08C137'}}>our works </span>
@@ -29,13 +29,18 @@ export default function App() {
         slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 50,
-          stretch: 0,
-          depth: 100,
+          stretch: 1,
+          depth: 70,
           modifier: 1,
           slideShadows: false,
         }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        navigation={true}
         pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[Autoplay, EffectCoverflow, Pagination]}
         className="mySwiper"
       >
         ;

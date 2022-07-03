@@ -6,8 +6,8 @@ import React from "react";
 const Service = ({ service }) => {
   const { serviceName, img, discription } = service;
   return (
-    <Grid  sx={{ ":hover": {boxShadow: 10, borderRadius: 5, transform: 'scale(1.05)'}, cursor: 'pointer', justifyContent: 'space-evenly', marginX: 'auto', transition: 'transform 0.5s'}}
- xs={12} md={4}>
+    <Grid sx={{ ":hover": {boxShadow: 10, borderRadius: 5, transform: 'scale(1.05)'}, cursor: 'pointer', justifyContent: 'space-evenly', marginX: 'auto', mb: 5, transition: 'transform 0.5s'}}
+ xs={10} md={3.5}>
       <Box>
         <CardMedia
           component="img"

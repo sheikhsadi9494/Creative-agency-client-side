@@ -25,10 +25,10 @@ function Dashbord(props) {
   };
 
   const drawer = (
-    <div>
+    <div style={{border: 'none'}}>
       <Toolbar />
-      <Divider />
-      <nav>
+      
+      <nav style={{border: 'none'}}>
         <Link style={{textDecoration: 'none', color: 'black', fontSize: "xxl-large,"}}  to="/dashbord">
           <ListItemButton style={{paddingLeft: '40px'}} variant="text">My Orders</ListItemButton>
         </Link>
@@ -68,6 +68,9 @@ function Dashbord(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+          backgroundColor: 'white',
+          boxShadow: 0,
+          border: 'none'
         }}
       >
         <Toolbar>
@@ -87,7 +90,7 @@ function Dashbord(props) {
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 }, border: 'none'}}
         aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -111,7 +114,9 @@ function Dashbord(props) {
           sx={{
             display: { xs: 'none', sm: 'block' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            border: 'none'
           }}
+          // style={{border: '5px solid black'}}
           open
         >
           {drawer}
@@ -119,7 +124,7 @@ function Dashbord(props) {
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` }}}
       >
         <Toolbar />
 
