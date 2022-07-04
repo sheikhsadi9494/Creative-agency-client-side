@@ -12,10 +12,11 @@ import Typography from '@mui/material/Typography';
 import { Link, Outlet } from 'react-router-dom';
 import { Button, ListItemButton } from '@mui/material';
 import useAuth from '../../../hooks/useAuth';
-
+import { useState } from 'react';
 const drawerWidth = 240;
 
 function Dashbord(props) {
+  const {user, logOut} = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const { admin } = useAuth();
@@ -24,9 +25,22 @@ function Dashbord(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const [appbar, setAppbar] = useState('');
+
+  function myorder(section) {
+    const appbarText = section;
+    setAppbar(appbarText)
+    console.log(appbarText);
+    }
+
   const drawer = (
     <div style={{border: 'none'}}>
-      <Toolbar />
+       <Box sx={{ marginLeft: 5, marginTop: 3, marginBottom: 5}}>
+       <img style={{width: '150px',}} src="https://i.ibb.co/Xy515kT/logo.png" alt="" />
+       </Box>
+       {/* <Divider sx={{display: {sm: 'none'}}} /> */}
+
+      {/* <Toolbar /> */}
       
       <nav style={{border: 'none'}}>
         <Link style={{textDecoration: 'none', color: 'black', fontSize: "xxl-large,"}}  to="/dashbord">
@@ -70,27 +84,35 @@ function Dashbord(props) {
           ml: { sm: `${drawerWidth}px` },
           backgroundColor: 'white',
           boxShadow: 0,
-          border: 'none'
+          py: 1
+          // border: '2px solid black'
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{display: 'flex', justifyContent: 'space-between'}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { sm: 'none' }, color: 'black' }}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Responsive drawer
-          </Typography>
+            <Box>
+               <Typography sx={{color: 'black', fontWeight: 'semiBold', textTransform: 'capitalize', paddingLeft: 5}} variant="h5" noWrap component="div">
+                  My Orders
+               </Typography>
+            </Box>
+            <Box >
+               <Typography sx={{color: 'black', fontWeight: 'semiBold', textTransform: 'capitalize'}} variant="body1" noWrap component="div">
+                  {user.displayName}
+               </Typography>
+            </Box>
         </Toolbar>
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 }, border: 'none'}}
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 }, border: 'none', marginTop: 5}}
         aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -104,7 +126,8 @@ function Dashbord(props) {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, border: 'none'},
+            
           }}
         >
           {drawer}
@@ -113,7 +136,7 @@ function Dashbord(props) {
           variant="permanent"
           sx={{
             display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, border: 'none'},
             border: 'none'
           }}
           // style={{border: '5px solid black'}}
@@ -124,7 +147,7 @@ function Dashbord(props) {
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` }}}
+        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)`}, backgroundColor: '#E6FBFF'}}
       >
         <Toolbar />
 
