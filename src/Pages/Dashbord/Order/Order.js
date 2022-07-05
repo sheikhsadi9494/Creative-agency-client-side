@@ -25,29 +25,41 @@ const Order = ({ order, orders, setOrders}) => {
 
   return (
     <Grid item xs={12} md={6} lg={4}>
-      <Card sx={{ maxWidth: 345, mx: 'auto', mb: '25px'}}>
+      <Card sx={{mx: 'auto', mb: '25px', borderRadius: '20px'}}>
         <CardMedia
           component="img"
-          height="140"
+          height="170"
           image={img}
           alt="green iguana"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Box sx={{display: 'flex', justifyContent: 'space-between', marginBottom: 1, marginTop: 1}}>
+          <Typography sx={{fontWeight: 'bold'}} gutterBottom variant="h6" component="div">
             {serviceName}
           </Typography>
-          <Typography gutterBottom variant="body1" component="div">
-            Email: {email} <br />
-            price: $ {price} <br />
+          {
+            status === 'Pending' ?
+            <Typography sx={{backgroundColor: "#FF827C", color: 'white', borderRadius: 2, px: 2, paddingTop: '5px'}} gutterBottom variant="body1" component="div">
+             {status}
+            </Typography>
+          :
+            <Typography sx={{backgroundColor: "#57D568", color: 'white', borderRadius: 2, px: 2, paddingTop: '5px'}} gutterBottom variant="body1" component="div">
+             {status}
+            </Typography>
+          }
+          
+          </Box>
+          <Typography sx={{fontWeight: 'bold'}} gutterBottom variant="body1" component="div">
+            {/* Email: {email} <br /> */}
+            Price: $ {price} <br />
             Delevery Time: {DeleveryTime} <br />
-            Status: {status}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {discription}
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button onClick={() => handleDeleteOrder(_id)} variant="text" sx={{color: 'red'}}>cancel</Button>
+        <CardActions sx={{marginTop: '-15px', marginLeft: '5px'}}>
+          <Button sx={{textTransform: 'capitalize', color: 'red', fontSize: '17px'}} onClick={() => handleDeleteOrder(_id)} variant="text">cancel</Button>
         </CardActions>
       </Card>
     </Grid>

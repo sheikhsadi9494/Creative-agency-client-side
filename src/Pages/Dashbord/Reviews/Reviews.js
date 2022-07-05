@@ -1,8 +1,18 @@
-import { Alert, Button, Rating, Stack, TextField } from "@mui/material";
-import React from "react";
+import {
+  Alert,
+  Button,
+  Paper,
+  Rating,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
+import React, { useLayoutEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import useAuth from "../../../hooks/useAuth";
+import { Box } from "@mui/system";
+import "./Reviews.css";
 
 const Reviews = () => {
   const { user } = useAuth();
@@ -10,6 +20,10 @@ const Reviews = () => {
   const initialInfo = { displayName: user.displayName, email: user.email };
   const [reviewData, setReviewData] = useState(initialInfo);
   const [reviewSuccessfull, setReviewSuccessful] = useState(false);
+
+  useLayoutEffect(() => {
+    document.body.style.backgroundColor = "#E6FBFF";
+  });
 
   const handleBlur = (e) => {
     e.preventDefault();
@@ -45,28 +59,55 @@ const Reviews = () => {
 
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>Reviews</h2>
-      <form
-        onSubmit={handleReviewSubmit}
-        style={{
-          border: "1px solid lightGray",
-          width: "60%",
-          margin: "auto",
-          padding: "40px",
-          borderRadius: "15px",
+      <Typography
+        sx={{
+          color: "black",
+          fontWeight: "semiBold",
+          textTransform: "capitalize",
+          textAlign: 'center',
+          marginTop: '30px',
+          marginBottom: '50px',
         }}
+        variant="h4"
+        noWrap
+        component="div"
+      >
+        Make Review
+      </Typography>
+
+      <form
+        className="reviewFrom"
+        sx={
+          {
+            // border: "none",
+            // padding: "40px",
+            // borderRadius: "15px",
+            // backgroundColor: "#F7DC6F",
+          }
+        }
+        onSubmit={handleReviewSubmit}
       >
         <TextField
-          label="Image URL"
-          sx={{ width: "100%", marginY: 1 }}
+          placeholder="Image URL"
+          sx={{
+            width: "100%",
+            marginY: 1,
+            backgroundColor: "white",
+            borderRadius: 1,
+          }}
           name="img"
           onBlur={handleBlur}
           variant="outlined"
         />{" "}
         <br />
         <TextField
-          label="Position in your company"
-          sx={{ width: "100%", marginY: 1 }}
+          placeholder="Position in your company"
+          sx={{
+            width: "100%",
+            marginY: 1,
+            backgroundColor: "white",
+            borderRadius: 1,
+          }}
           name="busness"
           onBlur={handleBlur}
           variant="outlined"
@@ -74,22 +115,61 @@ const Reviews = () => {
         <br />
         <TextField
           id="outlined-multiline-static"
-          label="Write Your Review"
+          placeholder="Write Your Review"
           multiline
           rows={4}
-          sx={{ width: "100%", marginY: 1 }}
+          sx={{
+            width: "100%",
+            marginY: 1,
+            backgroundColor: "white",
+            borderRadius: 1,
+          }}
           name="comment"
           onBlur={handleBlur}
         />{" "}
         <br />
-        <Stack spacing={1} sx={{mt: 3, mb: 5}}>
-          <Rating name="rating" onBlur={handleBlur} defaultValue={0} size="small" />
-          {/* <Rating name="size-medium" defaultValue={2} />
-          <Rating name="size-large" defaultValue={2} size="large" /> */}
+        <Stack spacing={1} sx={{ mt: 2, mb: 2 }}>
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box>
+              <Typography
+                sx={{
+                  color: "black",
+                  fontWeight: "semiBold",
+                  textTransform: "capitalize",
+                }}
+                variant="h6"
+                noWrap
+                component="div"
+              >
+                Rate us:
+              </Typography>
+            </Box>
+            <Box sx={{ marginLeft: 3 }}>
+              <Rating
+                name="rating"
+                onBlur={handleBlur}
+                defaultValue={0}
+                size="large"
+              />
+            </Box>
+          </Box>
         </Stack>
-        <Button type="submit" variant="contained">
-          Submit
-        </Button>
+        <Box sx={{ width: "120px", margin: "auto" }}>
+          <Button
+            sx={{
+              backgroundColor: "black",
+              mt: 2,
+              px: 4,
+              textTransform: "capitalize",
+              ":hover": { backgroundColor: "black" },
+              width: "100%",
+            }}
+            type="submit"
+            variant="contained"
+          >
+            Review
+          </Button>
+        </Box>
       </form>
 
       {reviewSuccessfull && (

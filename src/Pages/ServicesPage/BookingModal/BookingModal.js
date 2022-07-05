@@ -46,7 +46,7 @@ const BookingModal = ({ modalOpen, handleModalClose, servicesDetails, setOrderSu
         discription,
         price,
         DeleveryTime,
-        status: "pending",
+        status: "Pending",
       }
       //send data to the server
       fetch('http://localhost:5000/orders', {

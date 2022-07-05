@@ -15,7 +15,7 @@ import useAuth from '../../../hooks/useAuth';
 import { useState } from 'react';
 const drawerWidth = 240;
 
-function Dashbord(props) {
+function Dashbord(props, appText) {
   const {user, logOut} = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -27,11 +27,6 @@ function Dashbord(props) {
 
   const [appbar, setAppbar] = useState('');
 
-  function myorder(section) {
-    const appbarText = section;
-    setAppbar(appbarText)
-    console.log(appbarText);
-    }
 
   const drawer = (
     <div style={{border: 'none'}}>
@@ -100,7 +95,7 @@ function Dashbord(props) {
           </IconButton>
             <Box>
                <Typography sx={{color: 'black', fontWeight: 'semiBold', textTransform: 'capitalize', paddingLeft: 5}} variant="h5" noWrap component="div">
-                  My Orders
+                  Dashbord
                </Typography>
             </Box>
             <Box >
@@ -147,7 +142,7 @@ function Dashbord(props) {
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)`}, backgroundColor: '#E6FBFF'}}
+        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)`}, backgroundColor: '#E6FBFF',}}
       >
         <Toolbar />
 

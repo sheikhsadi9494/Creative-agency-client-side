@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import Navigation from '../../Shered/Header/Navigation';
 import Banner from '../Banner/Banner';
 import Logos from '../Logos/Logos';
@@ -8,6 +8,9 @@ import Services from '../Services/Services';
 import SomeOfOurWork from '../SomeOfOurWork/SomeOfOurWork';
 
 const HomeContainer = () => {
+    useLayoutEffect(() => {
+        document.body.style.backgroundColor = "white"
+   });
     return (
         <div>
             <Navigation></Navigation>

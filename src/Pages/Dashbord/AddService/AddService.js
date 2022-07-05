@@ -1,7 +1,8 @@
-import { Button, TextField } from "@mui/material";
+import { Button, Paper, TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
+import './AddService.css'
 
 const AddService = () => {
   const [service, setService] = useState([]);
@@ -42,27 +43,28 @@ const AddService = () => {
     <div>
       <h2 style={{textAlign: 'center'}}>Add Service</h2>
       <Box>
-        <form onSubmit={handleServicesDataSubmit} style={{padding: '30px', width: '80%', margin: "auto", borderRadius: "20px", border: '1px solid gray'}}>
+        <Paper className="addServiceFrom" sx={{p: 5, borderRadius: '15px'}} elevation={12}>
+        <form onSubmit={handleServicesDataSubmit}>
           <TextField
             label="Service Name"
             name="serviceName"
             onBlur={handleBlur}
             size="small"
-            sx={{mb: 2, width: '70%'}}
+            sx={{mb: 2, width: '100%'}}
           /> <br />                          
           <TextField
             label="Price"
             name="price"
             onBlur={handleBlur}
             size="small"
-            sx={{mb: 2, width: '70%'}}
+            sx={{mb: 2, width: '100%'}}
           /> <br /> 
           <TextField
             label="Image Url"
             name="img"
             onBlur={handleBlur}
             size="small"
-            sx={{mb: 2, width: '70%'}}
+            sx={{mb: 2, width: '100%'}}
           /> <br /> 
           <TextField
             label="Delevery Time"
@@ -70,7 +72,7 @@ const AddService = () => {
             onBlur={handleBlur}
             size="small"
             type="number"
-            sx={{mb: 2, width: '70%'}}
+            sx={{mb: 2, width: '100%'}}
           /> <br />
           <TextField
             id="outlined-multiline-static"
@@ -81,8 +83,22 @@ const AddService = () => {
             rows={4}
             sx={{width: '100%'}}
           />
-          <Button onC variant="contained" sx={{mt: 3}} type="submit">Submit</Button>
+                    <Button
+            sx={{
+              backgroundColor: "black",
+              mt: 2,
+              px: 4,
+              textTransform: "capitalize",
+              ":hover": { backgroundColor: "black" },
+              width: "100%",
+            }}
+            type="submit"
+            variant="contained"
+          >
+            Add Service
+          </Button>
         </form>
+        </Paper>
       </Box>
       <div className="content">
         <Outlet />
