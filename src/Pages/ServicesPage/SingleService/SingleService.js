@@ -11,7 +11,7 @@ const SingleService = ({ singleService }) => {
         <Card sx={{borderRadius: '30px'}}>
         <CardMedia
           component="img"
-          sx={{width: '100%', margin: 'auto',}}
+          sx={{width: '100%', margin: 'auto', height: '200px'}}
           image={img}
           alt="green iguana"
         />

@@ -75,6 +75,14 @@ const AddService = () => {
             sx={{mb: 2, width: '100%'}}
           /> <br />
           <TextField
+            label="Category: development / design / markating"
+            name="category"
+            onBlur={handleBlur}
+            size="small"
+            type="text"
+            sx={{mb: 2, width: '100%'}}
+          /> <br />
+          <TextField
             id="outlined-multiline-static"
             name="discription"
             onBlur={handleBlur}
