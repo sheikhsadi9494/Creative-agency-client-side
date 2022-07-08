@@ -25,7 +25,7 @@ const AllServices = ({orderSuccessfull}) => {
       >
         Our Services
       </Typography>
-      {/* <Typography
+      <Typography
         sx={{
           textAlign: 'center', 
         }}
@@ -34,7 +34,7 @@ const AllServices = ({orderSuccessfull}) => {
         component="div"
       >
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br/> Sapiente ipsum perferendis rem vel consequuntur accusamus aperiam ad obcaecati dolorem sequi.
-      </Typography> */}
+      </Typography>
 
         <Container sx={{marginY: '50px'}}>
         <Grid container spacing={4}>
