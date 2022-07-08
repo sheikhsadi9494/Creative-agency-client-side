@@ -2,9 +2,6 @@ import { Box, Button, Card, CardActions, CardContent, CardMedia, Container, Grid
 import React, { useEffect, useState, useLayoutEffect} from "react";
 import { Outlet } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
-import Order from "../Order/Order";
-import OrderList from "../OrderList/OrderList";
-import Dashbord from "../Dashbord/Dashbord"
 
 
 

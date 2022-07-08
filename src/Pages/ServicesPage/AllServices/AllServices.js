@@ -15,35 +15,29 @@ const AllServices = ({orderSuccessfull}) => {
     <Box>
       <Typography
         sx={{
-          width: "8%",
-          textAlign: "center",
-          marginTop: "100px",
-          marginX: "60px",
-          boxShadow: 3,
-          padding: "5px",
-          borderRadius: 1,
-          backgroundColor: "#FFC300 ",
-          fontWeight: "bold",
+          textAlign: 'center', 
+          marginTop: '150px', 
+          fontWeight: 'bold',
         }}
-        variant="h5"
-        gutterBottom
-        component="div"
-      >
-        Services
-      </Typography>
-      <Typography
-        sx={{
-          marginX: "60px",
-        }}
-        variant="h3"
+        variant="h4"
         gutterBottom
         component="div"
       >
         Our Services
       </Typography>
+      <Typography
+        sx={{
+          textAlign: 'center', 
+        }}
+        variant="body1"
+        gutterBottom
+        component="div"
+      >
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br/> Sapiente ipsum perferendis rem vel consequuntur accusamus aperiam ad obcaecati dolorem sequi.
+      </Typography>
 
         <Container sx={{marginY: '50px'}}>
-        <Grid container spacing={2}>
+        <Grid container spacing={4}>
             {
                 AllServices.map(singleService => <SingleService 
                     key={singleService.serviceName} 

@@ -14,7 +14,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  border: "none",
   borderRadius: '10px',
   boxShadow: 24,
   p: 4,
@@ -78,12 +78,24 @@ const BookingModal = ({ modalOpen, handleModalClose, servicesDetails, setOrderSu
       }}
     >
       <Fade in={modalOpen}>
-        <Box sx={style}>
-          <Typography id="transition-modal-title" variant="h6" component="h2">
+        <Box style={{textAlign: 'center'}} sx={style}>
+          <Typography sx={{fontWeight: 'bold', marginBottom: 3}} id="transition-modal-title" variant="h5" component="h2">
             {serviceName}
           </Typography>
           <form onSubmit={handleOrderSubmit}>
-            <TextField
+          <Typography sx={{fontWeight: 'semibold', marginBottom: 1}} id="transition-modal-title" variant="h6" component="h2">
+            Your/Company Name: {user.displayName}
+          </Typography>
+          <Typography sx={{fontWeight: 'semibold', marginBottom: 1}} id="transition-modal-title" variant="h6" component="h2">
+            Email: {user.email}
+          </Typography>
+          <Typography sx={{fontWeight: 'semibold', marginBottom: 1}} id="transition-modal-title" variant="h6" component="h2">
+            Service Name: {serviceName}
+          </Typography>
+          <Typography sx={{fontWeight: 'semibold', marginBottom: 1}} id="transition-modal-title" variant="h6" component="h2">
+            Price: {price} USD
+          </Typography>
+            {/* <TextField
               label="Your Name"
               sx={{ width: "95%", margin: 1 }}
               name='clientName'
@@ -119,8 +131,10 @@ const BookingModal = ({ modalOpen, handleModalClose, servicesDetails, setOrderSu
               defaultValue={`${price} USD`}
               onBlur={handleBlur}
               size="small" 
-              />
-            <Button type="submit" variant="contained">Contained</Button>
+              /> */}
+            <Box sx={{width: '200px', margin: 'auto',}}>
+               <Button sx={{textTransform: 'capitalize', width: '100%', marginTop: '40px'}} type="submit" variant="contained">Order Comfirm</Button>
+            </Box>
           </form>
         </Box>
       </Fade>

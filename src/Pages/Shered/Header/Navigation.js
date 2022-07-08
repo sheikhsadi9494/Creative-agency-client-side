@@ -122,12 +122,12 @@ const Navigation = () => {
               <Box style={{ color: "black", marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Home</Box>
             </NavLink>
 
-            <NavLink style={{ textDecoration: "none" }} to="/">
-              <Box style={{ color: "black", marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Our Portfolio</Box>
-            </NavLink>
-
             <NavLink style={{ textDecoration: "none" }} to="/services">
               <Box style={{ color: "black",  marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Services</Box>
+            </NavLink>
+
+            <NavLink style={{ textDecoration: "none" }} to="/">
+              <Box style={{ color: "black", marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Our Portfolio</Box>
             </NavLink>
 
             <NavLink style={{ textDecoration: "none" }} to="/services">
