@@ -4,7 +4,7 @@ import React from "react";
 
 const ServicesHeader = () => {
   return (
-    <Box style={{backgroundColor: '#FBD062', paddingBottom: '80px', paddingTop: '40px'}}>
+    <Box sx={{ backgroundColor: "#FBD062", paddingBottom: '150px', paddingTop: '50px', paddingX: '30px', clipPath: {lg: 'polygon(0 0, 100% 0%, 100% 75%, 0 100%)', xs: 'polygon(0 0, 100% 0%, 100% 88%, 0 100%)'}}}>
       <Grid sx={{justifyContent: 'space-evenly', alignItems: 'center'}} container spacing={2}>
           <Grid item lg={4} md={4} xs={11}>
           <Box>

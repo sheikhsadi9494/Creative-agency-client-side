@@ -11,6 +11,7 @@ import Reviews from './Pages/Dashbord/Reviews/Reviews';
 import HomeContainer from './Pages/Home/HomeContainer/HomeContainer';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
+import PortfoiloContainer from './Pages/OurPortfolio/PortfoiloContainer';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import ServicesDetails from './Pages/ServicesPage/ServiceDetails/ServicesDetails';
 import ServicesContainer from './Pages/ServicesPage/ServicesContainer/ServicesContainer';
@@ -23,6 +24,7 @@ function App() {
           <Route path='/' element={<HomeContainer/>}/>
           <Route path='home' element={<HomeContainer/>}/>
           <Route path='services' element={<ServicesContainer/>}/>
+          <Route path='our-portfolio' element={<PortfoiloContainer/>}/>
           <Route path='services/:servicesId' element={<PrivateRoute><ServicesDetails/></PrivateRoute>}/>
           <Route path='dashbord' element={<PrivateRoute><Dashbord/></PrivateRoute>}>
             <Route index element={<Orders/>}/>

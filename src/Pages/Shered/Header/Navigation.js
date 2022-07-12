@@ -90,10 +90,14 @@ const Navigation = () => {
               }}
             >
               <MenuItem onClick={handleCloseNavMenu}>
+                <NavLink style={{ textDecoration: "none" }} to="/home">
+                  <Typography textAlign="center">Home</Typography>
+                </NavLink>
+              </MenuItem>
+              <MenuItem>
                 <NavLink style={{ textDecoration: "none" }} to="/services">
                   <Typography textAlign="center">Services</Typography>
-                </NavLink>{" "}
-                <br />
+                </NavLink>
               </MenuItem>
               <MenuItem>
                 <NavLink style={{ textDecoration: "none" }} to="/services">
@@ -126,7 +130,7 @@ const Navigation = () => {
               <Box style={{ color: "black",  marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Services</Box>
             </NavLink>
 
-            <NavLink style={{ textDecoration: "none" }} to="/">
+            <NavLink style={{ textDecoration: "none" }} to="/our-portfolio">
               <Box style={{ color: "black", marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Our Portfolio</Box>
             </NavLink>
 

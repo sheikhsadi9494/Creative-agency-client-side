@@ -6,27 +6,27 @@ const Logos = () => {
   return (
     <Container sx={{mt: {xs: 4, lg: 11}, mb: {xs: 5, lg: 15}}}>
       <Grid style={{justifyContent: 'space-evenly', alignItems: 'center'}} container spacing={2}>
-        <Grid item xs={5} md={1.5} lg={1.5}>
+        <Grid item xs={3.5} md={1.5} lg={1.5}>
           <Box style={{ margin: 'auto'}}>
              <img style={{width: '100%'}} src="https://i.ibb.co/2yCrRRV/slack.png" alt="" />
           </Box>
         </Grid>
-        <Grid item xs={5} md={1.5} lg={1.5}>
+        <Grid item xs={3.5} md={1.5} lg={1.5}>
           <Box style={{ margin: 'auto'}}>
              <img style={{width: '100%'}} src="https://i.ibb.co/3sSQXDT/google.png" alt="" />
           </Box>
         </Grid>
-        <Grid item xs={3.5} md={1.1} lg={1.1}>
+        <Grid item xs={2.8} md={1.1} lg={1.1}>
           <Box style={{ margin: 'auto'}}>
              <img style={{width: '100%'}} src="https://i.ibb.co/pzjkjTK/uber.png" alt="" />
           </Box>
         </Grid>
-        <Grid item xs={4} md={1.3} lg={1.3}>
+        <Grid item xs={3.5} md={1.3} lg={1.3}>
           <Box style={{ margin: 'auto'}}>
              <img style={{width: '100%'}} src="https://i.ibb.co/frvHJ8Y/netflix.png" alt="" />
           </Box>
         </Grid>
-        <Grid item xs={5} md={1.5} lg={1.5}>
+        <Grid item xs={3.5} md={1.5} lg={1.5}>
           <Box style={{ margin: 'auto'}}>
              <img style={{width: '100%'}} src="https://i.ibb.co/DM6V8wM/airbnb.png" alt="" />
           </Box>
