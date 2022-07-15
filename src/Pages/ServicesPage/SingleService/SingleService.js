@@ -1,5 +1,6 @@
 import { Box, Button, Card, CardContent, CardMedia, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
 const SingleService = ({ singleService }) => {
@@ -27,7 +28,7 @@ const SingleService = ({ singleService }) => {
           </Typography>
           <Box sx={{textAlign: 'center', marginTop: '20px'}}>
             <Link style={{textDecoration: 'none'}} to={`/services/${_id}`}>
-               <Button variant="contained" sx={{px: 4, borderRadius: '10px', textTransform: 'capitalize'}}>view service</Button>
+               <Button variant="contained" sx={{px: 4, borderRadius: '10px', textTransform: 'capitalize', backgroundColor: 'black', ":hover": {backgroundColor: 'black'}}}>view service</Button>
             </Link>
           </Box>
         </CardContent>

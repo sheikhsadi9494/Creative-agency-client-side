@@ -6,6 +6,9 @@ import Reviews from '../Reviews/Reviews';
 import SendUsMessage from '../SendUsMessage/SendUsMessage';
 import Services from '../Services/Services';
 import SomeOfOurWork from '../SomeOfOurWork/SomeOfOurWork';
+import Footer from '../../Shered/Footer/Footer';
+import NewsLetter from '../../Shered/NewsLetter/NewsLetter';
+import PServices from '../PServices/Pservices';
 
 const HomeContainer = () => {
     useLayoutEffect(() => {
@@ -17,9 +20,12 @@ const HomeContainer = () => {
             <Banner></Banner>
             <Logos></Logos>
             <Services></Services>
+            <PServices></PServices>
             <SomeOfOurWork></SomeOfOurWork>
             <Reviews></Reviews>
-            <SendUsMessage></SendUsMessage>
+            {/* <SendUsMessage></SendUsMessage> */}
+            <NewsLetter></NewsLetter>
+            <Footer></Footer>
         </div>
     );
 };

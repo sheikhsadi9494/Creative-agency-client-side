@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
 import AdminRoute from './Pages/AdminRoute/AdminRoute';
+import ContactUs from './Pages/ContactUs/ContactUs';
 import AddService from './Pages/Dashbord/AddService/AddService';
 import Dashbord from './Pages/Dashbord/Dashbord/Dashbord';
 import DeleteService from './Pages/Dashbord/DeleteService/DeleteService';
@@ -25,6 +26,7 @@ function App() {
           <Route path='home' element={<HomeContainer/>}/>
           <Route path='services' element={<ServicesContainer/>}/>
           <Route path='our-portfolio' element={<PortfoiloContainer/>}/>
+          <Route path='contact-us' element={<ContactUs/>}/>
           <Route path='services/:servicesId' element={<PrivateRoute><ServicesDetails/></PrivateRoute>}/>
           <Route path='dashbord' element={<PrivateRoute><Dashbord/></PrivateRoute>}>
             <Route index element={<Orders/>}/>

@@ -100,12 +100,17 @@ const Navigation = () => {
                 </NavLink>
               </MenuItem>
               <MenuItem>
+                <NavLink style={{ textDecoration: "none" }} to="/our-portfolio">
+                  <Typography textAlign="center">Our Portfolio</Typography>
+                </NavLink>
+              </MenuItem>
+              {/* <MenuItem>
                 <NavLink style={{ textDecoration: "none" }} to="/services">
                   <Typography textAlign="center">Our Team</Typography>
                 </NavLink>
-              </MenuItem>
+              </MenuItem> */}
               <MenuItem>
-                <NavLink style={{ textDecoration: "none" }} to="/services">
+                <NavLink style={{ textDecoration: "none" }} to="/contact-us">
                   <Typography textAlign="center">Contact Us</Typography>
                 </NavLink>
               </MenuItem>
@@ -134,11 +139,11 @@ const Navigation = () => {
               <Box style={{ color: "black", marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Our Portfolio</Box>
             </NavLink>
 
-            <NavLink style={{ textDecoration: "none" }} to="/services">
+            {/* <NavLink style={{ textDecoration: "none" }} to="/services">
               <Box style={{ color: "black",  marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Our Team</Box>
-            </NavLink>
+            </NavLink> */}
 
-            <NavLink style={{ textDecoration: "none" }} to="/services">
+            <NavLink style={{ textDecoration: "none" }} to="/contact-us">
               <Box style={{ color: "black" , textTransform: 'capitalize', fontSize: "16px"}}>Contact Us</Box>
             </NavLink>
           </Box>

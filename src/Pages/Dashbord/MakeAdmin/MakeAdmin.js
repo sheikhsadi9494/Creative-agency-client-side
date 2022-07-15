@@ -12,7 +12,7 @@ const MakeAdmin = () => {
   const handleAdminSubmit = (e) => {
     e.preventDefault();
     const user = { email };
-    fetch("http://localhost:5000/user/admin", {
+    fetch("https://serene-springs-79030.herokuapp.com/user/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -67,7 +67,7 @@ const MakeAdmin = () => {
                   <Button
                     sx={{
                       backgroundColor: "#FFD21C",
-                      color: 'black',
+                      color: "black",
                       fontWeight: 500,
                       textTransform: "capitalize",
                       ":hover": { backgroundColor: "#FFD21C" },

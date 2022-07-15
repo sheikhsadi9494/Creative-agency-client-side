@@ -4,7 +4,7 @@ import React from "react";
 
 const SendUsMessage = () => {
   return (
-    <Box sx={{backgroundColor: '#FBD062', py: 15, mt: 25}}>
+    <Box sx={{backgroundColor: '#08c1363d', py: 15}}>
       <Grid sx={{justifyContent: 'center'}} container spacing={2}>
         <Grid item xs={11} md={5}>
           <Box>
@@ -14,10 +14,10 @@ const SendUsMessage = () => {
               gutterBottom
               component="div"
             >
-              Let us handle your project, professionally.
+              Message Us
             </Typography>
-            <Typography variant="body1" gutterBottom>
-              With well written codes, we build amazing apps for all platforms,{" "}
+            <Typography variant="h6" gutterBottom>
+            Let us handle your project, professionally.<br/>With well written codes, we build amazing apps for all platforms,{" "}
               <br /> mobile and web apps in general.
             </Typography>
           </Box>
@@ -27,13 +27,13 @@ const SendUsMessage = () => {
             <TextField
               placeholder="Your email address"
               id="outlined-size-small"
-              size="small"
+              size="large"
               sx={{ width: "100%", backgroundColor: 'white', borderRadius: 1}}
             />
             <TextField
               placeholder="Your name / company name"
               id="outlined-size-small"
-              size="small"
+              size="large"
               sx={{ width: "100%", mt: 2, backgroundColor: 'white', borderRadius: 1}}
             />
             <TextField
@@ -43,7 +43,8 @@ const SendUsMessage = () => {
               rows={4}
               sx={{ width: "100%", mt: 2 , backgroundColor: 'white', borderRadius: 1}}
             />
-            <Button sx={{backgroundColor: 'black', mt: 2, px: 4, textTransform: 'capitalize'}} variant="contained">Send</Button>
+                               <Button sx={{backgroundColor: 'black', textTransform: 'capitalize', px: 5, py: 1, marginTop: 2, ':hover': {backgroundColor: 'black'}, borderRadius: '30px', fontWeight: 'semibold', fontSize: "large"}} variant="contained">Send</Button>
+
           </Box>
         </Grid>
       </Grid>

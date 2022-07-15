@@ -42,7 +42,7 @@ const Reviews = () => {
     };
     console.log(review);
     //send data
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://serene-springs-79030.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -64,9 +64,9 @@ const Reviews = () => {
           color: "black",
           fontWeight: "semiBold",
           textTransform: "capitalize",
-          textAlign: 'center',
-          marginTop: '30px',
-          marginBottom: '50px',
+          textAlign: "center",
+          marginTop: "30px",
+          marginBottom: "50px",
         }}
         variant="h4"
         noWrap

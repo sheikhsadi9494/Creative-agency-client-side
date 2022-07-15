@@ -1,9 +1,10 @@
 import { Button, CircularProgress, Container, Grid, Tab, Tabs, Typography } from "@mui/material";
 import { Box, fontWeight } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import SingleService from "../SingleService/SingleService";
+import { Link } from "react-router-dom";
+import SingleService from "../../ServicesPage/SingleService/SingleService";
 
-const AllServices = ({ orderSuccessfull }) => {
+const PServices = ({ orderSuccessfull }) => {
   const [AllServices, setAllServices] = useState([]);
 
   useEffect(() => {
@@ -19,7 +20,7 @@ const AllServices = ({ orderSuccessfull }) => {
       return currentService.category === serviceCate;
     });
     if (serviceCate === "All") {
-      setTempServices(AllServices);
+      setTempServices(AllServices.slice(0, 9));
     } else {
       setTempServices(cateServices);
     }
@@ -30,27 +31,14 @@ const AllServices = ({ orderSuccessfull }) => {
       <Typography
         sx={{
           textAlign: "center",
-          marginTop: "150px",
           fontWeight: "bold",
         }}
         variant="h4"
         gutterBottom
         component="div"
       >
-        Our Services
+        Our <span style={{color: '#08C137'}}>Services</span>
       </Typography>
-      {/* <Typography
-        sx={{
-          textAlign: "center",
-        }}
-        variant="body1"
-        gutterBottom
-        component="div"
-      >
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br />{" "}
-        Sapiente ipsum perferendis rem vel consequuntur accusamus aperiam ad
-        obcaecati dolorem sequi.
-      </Typography> */}
       <Container>
         <Grid sx={{ justifyContent: "center", mt: 3 }} container spacing={2}>
           <Grid item lg={3} md={3} sm={5} xs={5} sx={{ margin: "auto" }}>
@@ -115,7 +103,7 @@ const AllServices = ({ orderSuccessfull }) => {
           </Grid>
         </Grid>
       </Container>
-      <Container sx={{ marginTop: 10 }}>
+      <Container sx={{ marginTop: 10, marginBottom: 10}}>
         <Grid container spacing={4}>
         {
                  AllServices.length <= 0   &&
@@ -124,8 +112,9 @@ const AllServices = ({ orderSuccessfull }) => {
              </Box>
 
             }
+  
           {tempServices.length === 0
-            ? AllServices.map((singleService) => (
+            ? AllServices.slice(0,9).map((singleService) => (
                 <SingleService
                   key={singleService.serviceName}
                   singleService={singleService}
@@ -140,9 +129,25 @@ const AllServices = ({ orderSuccessfull }) => {
                 ></SingleService>
               ))}
         </Grid>
+        <Box sx={{width: '200px', mx: 'auto', marginTop: 10}}>
+        <Link style={{textDecoration: 'none'}} to="/services">
+        <Button
+              variant="contained"
+              sx={{
+                width: "100%",
+                textTransform: "capitalize",
+                margin: "auto",
+                backgroundColor: 'black',
+                ":hover": {backgroundColor: 'black'}
+              }}
+            >
+              More Services
+            </Button>
+        </Link>
+        </Box>
       </Container>
     </Box>
   );
 };
 
-export default AllServices;
+export default PServices;

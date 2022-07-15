@@ -34,43 +34,43 @@ const OrderList = () => {
   }));
 
   useEffect(() => {
-    fetch(`http://localhost:5000/allOrders`)
+    fetch(`https://serene-springs-79030.herokuapp.com/allOrders`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [orders]);
 
   const handleDeleteOrder = (id) => {
-    const proceed = window.confirm('Are You Sure To Delete This File?');
-    if(proceed){
-      const url = `http://localhost:5000/allOrders/${id}`;
+    const proceed = window.confirm("Are You Sure To Delete This File?");
+    if (proceed) {
+      const url = `https://serene-springs-79030.herokuapp.com/allOrders/${id}`;
       fetch(url, {
-        method: 'DELETE'
+        method: "DELETE",
       })
-      .then(res => res.json())
-      .then(data => {
-        if(data.deletedCount > 0){
-          alert('Delete Order SuccessFully')
-          const remaining = orders.filter(order => order._id !== id);
-          setOrders(remaining)
-        }
-      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            alert("Delete Order SuccessFully");
+            const remaining = orders.filter((order) => order._id !== id);
+            setOrders(remaining);
+          }
+        });
     }
-  }
+  };
 
   const handleUpdate = (id) => {
-    const url = `http://localhost:5000/allOrders/${id}`;
+    const url = `https://serene-springs-79030.herokuapp.com/allOrders/${id}`;
     fetch(url, {
-      method: "PUT"
+      method: "PUT",
     })
-    .then(res => res.json())
-    .then(data => {
-      if(data.deletedCount > 0) {
-        alert('Update Order Successfully')
-        const remaining = orders.filter(order => order._id !== id);
-        setOrders(remaining);
-      }
-    })
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          alert("Update Order Successfully");
+          const remaining = orders.filter((order) => order._id !== id);
+          setOrders(remaining);
+        }
+      });
+  };
 
   return (
     <div>
@@ -94,10 +94,20 @@ const OrderList = () => {
                   {order.clientName}
                 </StyledTableCell>
                 <StyledTableCell align="right">{order.email}</StyledTableCell>
-                <StyledTableCell align="right">{order.serviceName}</StyledTableCell>
+                <StyledTableCell align="right">
+                  {order.serviceName}
+                </StyledTableCell>
                 <StyledTableCell align="right">{order.status}</StyledTableCell>
-                <StyledTableCell align="right"><Button onClick={() => handleUpdate(order._id)}>Update</Button></StyledTableCell>
-                <StyledTableCell align="right"><Button onClick={() => handleDeleteOrder(order._id)}>Delete</Button></StyledTableCell>
+                <StyledTableCell align="right">
+                  <Button onClick={() => handleUpdate(order._id)}>
+                    Update
+                  </Button>
+                </StyledTableCell>
+                <StyledTableCell align="right">
+                  <Button onClick={() => handleDeleteOrder(order._id)}>
+                    Delete
+                  </Button>
+                </StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Shered/Footer/Footer';
 import Navigation from '../Shered/Header/Navigation';
 import NewsLetter from '../Shered/NewsLetter/NewsLetter';
 import OurPortfolioHeader from './OurPortfolioHeader';
@@ -11,6 +12,7 @@ const PortfoiloContainer = () => {
             <OurPortfolioHeader></OurPortfolioHeader>
             <PortfolioService></PortfolioService>
             <NewsLetter></NewsLetter>
+            <Footer></Footer>
         </div>
     );
 };

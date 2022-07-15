@@ -15,87 +15,118 @@ const style = {
   width: 400,
   bgcolor: "background.paper",
   border: "none",
-  borderRadius: '10px',
+  borderRadius: "10px",
   boxShadow: 24,
   p: 4,
 };
 
-const BookingModal = ({ modalOpen, handleModalClose, servicesDetails, setOrderSuccessful}) => {
-  const {user}= useAuth();
-  const { serviceName, img, discription, price, DeleveryTime } = servicesDetails;
+const BookingModal = ({
+  modalOpen,
+  handleModalClose,
+  servicesDetails,
+  setOrderSuccessful,
+}) => {
+  const { user } = useAuth();
+  const { serviceName, img, discription, price, DeleveryTime } =
+    servicesDetails;
 
-  const initialInfo = {clientName: user.displayName, email: user.email}
+  const initialInfo = { clientName: user.displayName, email: user.email };
   const [orderDetails, setOrderDetails] = useState(initialInfo);
 
-  const handleBlur = e => {
+  const handleBlur = (e) => {
     e.preventDefault();
     const field = e.target.name;
     const value = e.target.value;
-    const newDetails = {...orderDetails};
+    const newDetails = { ...orderDetails };
     newDetails[field] = value;
     setOrderDetails(newDetails);
-  }
+  };
 
-  const handleOrderSubmit = e => {
+  const handleOrderSubmit = (e) => {
     e.preventDefault();
-      //collact data
-      const order = {
-        ...orderDetails,
-        serviceName,
-        img, 
-        discription,
-        price,
-        DeleveryTime,
-        status: "Pending",
-      }
-      //send data to the server
-      fetch('http://localhost:5000/orders', {
-        method: 'POST',
-        headers: {
-          'content-type' : 'application/json'
-        },
-        body: JSON.stringify(order)
-      })
-      .then(res => res.json())
-      .then(data => {
-        if(data.insertedId){
+    //collact data
+    const order = {
+      ...orderDetails,
+      serviceName,
+      img,
+      discription,
+      price,
+      DeleveryTime,
+      status: "Pending",
+    };
+    //send data to the server
+    fetch("https://serene-springs-79030.herokuapp.com/orders", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
           setOrderSuccessful(true);
           handleModalClose();
         }
-      })
-  }
+      });
+  };
   return (
     <>
-    <Modal
-      aria-labelledby="transition-modal-title"
-      aria-describedby="transition-modal-description"
-      open={modalOpen}
-      onClose={handleModalClose}
-      closeAfterTransition
-      BackdropComponent={Backdrop}
-      BackdropProps={{
-        timeout: 500,
-      }}
-    >
-      <Fade in={modalOpen}>
-        <Box style={{textAlign: 'center'}} sx={style}>
-          <Typography sx={{fontWeight: 'bold', marginBottom: 3}} id="transition-modal-title" variant="h5" component="h2">
-            {serviceName}
-          </Typography>
-          <form onSubmit={handleOrderSubmit}>
-          <Typography sx={{fontWeight: 'semibold', marginBottom: 1}} id="transition-modal-title" variant="h6" component="h2">
-            Your/Company Name: {user.displayName}
-          </Typography>
-          <Typography sx={{fontWeight: 'semibold', marginBottom: 1}} id="transition-modal-title" variant="h6" component="h2">
-            Email: {user.email}
-          </Typography>
-          <Typography sx={{fontWeight: 'semibold', marginBottom: 1}} id="transition-modal-title" variant="h6" component="h2">
-            Service Name: {serviceName}
-          </Typography>
-          <Typography sx={{fontWeight: 'semibold', marginBottom: 1}} id="transition-modal-title" variant="h6" component="h2">
-            Price: {price} USD
-          </Typography>
-            {/* <TextField
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        open={modalOpen}
+        onClose={handleModalClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={modalOpen}>
+          <Box style={{ textAlign: "center" }} sx={style}>
+            <Typography
+              sx={{ fontWeight: "bold", marginBottom: 3 }}
+              id="transition-modal-title"
+              variant="h5"
+              component="h2"
+            >
+              {serviceName}
+            </Typography>
+            <form onSubmit={handleOrderSubmit}>
+              <Typography
+                sx={{ fontWeight: "semibold", marginBottom: 1 }}
+                id="transition-modal-title"
+                variant="h6"
+                component="h2"
+              >
+                Your/Company Name: {user.displayName}
+              </Typography>
+              <Typography
+                sx={{ fontWeight: "semibold", marginBottom: 1 }}
+                id="transition-modal-title"
+                variant="h6"
+                component="h2"
+              >
+                Email: {user.email}
+              </Typography>
+              <Typography
+                sx={{ fontWeight: "semibold", marginBottom: 1 }}
+                id="transition-modal-title"
+                variant="h6"
+                component="h2"
+              >
+                Service Name: {serviceName}
+              </Typography>
+              <Typography
+                sx={{ fontWeight: "semibold", marginBottom: 1 }}
+                id="transition-modal-title"
+                variant="h6"
+                component="h2"
+              >
+                Price: {price} USD
+              </Typography>
+              {/* <TextField
               label="Your Name"
               sx={{ width: "95%", margin: 1 }}
               name='clientName'
@@ -132,13 +163,23 @@ const BookingModal = ({ modalOpen, handleModalClose, servicesDetails, setOrderSu
               onBlur={handleBlur}
               size="small" 
               /> */}
-            <Box sx={{width: '200px', margin: 'auto',}}>
-               <Button sx={{textTransform: 'capitalize', width: '100%', marginTop: '40px'}} type="submit" variant="contained">Order Comfirm</Button>
-            </Box>
-          </form>
-        </Box>
-      </Fade>
-    </Modal>
+              <Box sx={{ width: "200px", margin: "auto" }}>
+                <Button
+                  sx={{
+                    textTransform: "capitalize",
+                    width: "100%",
+                    marginTop: "40px",
+                  }}
+                  type="submit"
+                  variant="contained"
+                >
+                  Order Comfirm
+                </Button>
+              </Box>
+            </form>
+          </Box>
+        </Fade>
+      </Modal>
     </>
   );
 };
