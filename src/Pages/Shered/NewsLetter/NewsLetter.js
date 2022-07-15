@@ -16,7 +16,7 @@ const NewsLetter = () => {
           <Box>
             <Typography sx={{fontWeight: 'bold', textAlign: '', marginBottom: "50px"}} variant="h4" gutterBottom component="div">       
               
-              Let us handle your project, <span style={{color: '#08C137'}} >professionally.</span>
+              Let us handle your project, <span style={{color: '#08C137'}} >professionally. Fuck</span>
             </Typography>
             <form action="">
                <TextField sx={{width: '100%', marginTop: 4}} id="standard-basic" placeholder="Enter your name" variant="standard" /> <br />
