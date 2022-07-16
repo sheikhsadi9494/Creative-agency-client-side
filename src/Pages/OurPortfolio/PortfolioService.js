@@ -8,7 +8,7 @@ const PortfolioService = () => {
         {/* <Typography sx={{fontWeight: 'bold', textAlign: 'center'}} variant="h4" gutterBottom component="div">
           Our Portfolio Website
         </Typography> */}
-      <Grid sx={{marginTop: 10, marginBottom: 10}} container spacing={4}>
+      <Grid sx={{marginTop: 10, marginBottom: 15}} container spacing={4}>
         <Grid item lg={4} md={4} xs={10}>
           <Box sx={{}}>
             <Box sx={{width: "100%"}}>

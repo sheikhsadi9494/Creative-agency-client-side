@@ -71,7 +71,7 @@ const MakeAdmin = () => {
                       fontWeight: 500,
                       textTransform: "capitalize",
                       ":hover": { backgroundColor: "#FFD21C" },
-                      width: "100%",
+                      width: "150px",
                     }}
                     type="submit"
                     variant="contained"

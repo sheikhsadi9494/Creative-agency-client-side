@@ -169,6 +169,8 @@ const BookingModal = ({
                     textTransform: "capitalize",
                     width: "100%",
                     marginTop: "40px",
+                    backgroundColor: 'black', 
+                    ":hover": {backgroundColor: 'black'}
                   }}
                   type="submit"
                   variant="contained"

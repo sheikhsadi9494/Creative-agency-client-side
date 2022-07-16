@@ -144,9 +144,9 @@ const ServicesDetails = () => {
               <Button
                 variant="contained"
                 onClick={handleModalOpen}
-                sx={{ textTransform: "capitalize", px: 4, marginTop: 3 }}
+                sx={{ textTransform: "capitalize", px: 4, marginTop: 3, backgroundColor: 'black', ":hover": {backgroundColor: 'black'}}}
               >
-                purchase
+                Order Now
               </Button>
             </Box>
           </Box>

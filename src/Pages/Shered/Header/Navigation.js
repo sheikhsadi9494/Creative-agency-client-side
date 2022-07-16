@@ -90,17 +90,17 @@ const Navigation = () => {
               }}
             >
               <MenuItem onClick={handleCloseNavMenu}>
-                <NavLink style={{ textDecoration: "none" }} to="/home">
+                <NavLink style={{ textDecoration: "none", color: 'black'}} to="/home">
                   <Typography textAlign="center">Home</Typography>
                 </NavLink>
               </MenuItem>
               <MenuItem>
-                <NavLink style={{ textDecoration: "none" }} to="/services">
+                <NavLink style={{ textDecoration: "none", color: 'black'}} to="/services">
                   <Typography textAlign="center">Services</Typography>
                 </NavLink>
               </MenuItem>
               <MenuItem>
-                <NavLink style={{ textDecoration: "none" }} to="/our-portfolio">
+                <NavLink style={{ textDecoration: "none", color: 'black'}} to="/our-portfolio">
                   <Typography textAlign="center">Our Portfolio</Typography>
                 </NavLink>
               </MenuItem>
@@ -110,7 +110,7 @@ const Navigation = () => {
                 </NavLink>
               </MenuItem> */}
               <MenuItem>
-                <NavLink style={{ textDecoration: "none" }} to="/contact-us">
+                <NavLink style={{ textDecoration: "none", color: 'black'}} to="/contact-us">
                   <Typography textAlign="center">Contact Us</Typography>
                 </NavLink>
               </MenuItem>
@@ -128,15 +128,15 @@ const Navigation = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex", justifyContent: "flex-end"}, marginRight: '50px'}}>
             <NavLink style={{ textDecoration: "none" }} to="/">
-              <Box style={{ color: "black", marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Home</Box>
+              <Box style={{ color: "black", marginRight: 30, textTransform: 'capitalize', fontSize: "17px"}}>Home</Box>
             </NavLink>
 
             <NavLink style={{ textDecoration: "none" }} to="/services">
-              <Box style={{ color: "black",  marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Services</Box>
+              <Box style={{ color: "black",  marginRight: 30, textTransform: 'capitalize', fontSize: "17px"}}>Services</Box>
             </NavLink>
 
             <NavLink style={{ textDecoration: "none" }} to="/our-portfolio">
-              <Box style={{ color: "black", marginRight: 28, textTransform: 'capitalize', fontSize: "16px"}}>Our Portfolio</Box>
+              <Box style={{ color: "black", marginRight: 30, textTransform: 'capitalize', fontSize: "17px"}}>Our Portfolio</Box>
             </NavLink>
 
             {/* <NavLink style={{ textDecoration: "none" }} to="/services">
@@ -144,7 +144,7 @@ const Navigation = () => {
             </NavLink> */}
 
             <NavLink style={{ textDecoration: "none" }} to="/contact-us">
-              <Box style={{ color: "black" , textTransform: 'capitalize', fontSize: "16px"}}>Contact Us</Box>
+              <Box style={{ color: "black" , textTransform: 'capitalize', fontSize: "17px"}}>Contact Us</Box>
             </NavLink>
           </Box>
 
