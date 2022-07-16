@@ -54,12 +54,12 @@ const Register = () => {
         />
       </Box>
       <Grid sx={{ justifyContent: "center" }} container spacing={2}>
-        <Grid item lg={7} md={7} sm={11} xs={11}>
+        <Grid item lg={6} md={6} sm={11} xs={11}>
           <Box
             style={{
               border: "1px solid gray",
               padding: "40px",
-              borderRadius: "5px",
+              borderRadius: "15px",
             }}
           >
             {!isLoading && (
@@ -120,7 +120,7 @@ const Register = () => {
              </Box>}
             <p style={{ textAlign: "center", fontWeight: "bold" }}>
               {" "}
-              already have an account ? please{" "}
+              Already have an account ? please{" "}
               <Link
                 style={{ color: "#5DADE2", textDecoration: "none" }}
                 to="/login"

@@ -47,14 +47,14 @@ const Login = () => {
         />
       </Box>
       <Grid sx={{justifyContent: 'center'}} container spacing={2}>
-        <Grid item lg={7} md={7} sm={11} xs={11}>
+        <Grid item lg={6} md={6} sm={11} xs={11}>
         <Box
         style={{
           border: "1px solid gray",
           // width: {lg: "45%", md: "45%", sm: "70%", xs: "70%"},
           // margin: "auto",
           padding: "40px",
-          borderRadius: "5px",
+          borderRadius: "15px",
         }}
       >
         {!isLoading && (

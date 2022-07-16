@@ -1,10 +1,8 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import React, { useEffect, useState, useLayoutEffect } from "react";
 import { Outlet } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import Order from "../Order/Order";
-import OrderList from "../OrderList/OrderList";
-import Dashbord from "../Dashbord/Dashbord";
 
 const Orders = () => {
   const { user } = useAuth();
@@ -21,7 +19,6 @@ const Orders = () => {
       .then((data) => setOrders(data));
   }, []);
 
-  const appText = "fuck";
 
   return (
     <Container sx={{ pt: 4 }}>
