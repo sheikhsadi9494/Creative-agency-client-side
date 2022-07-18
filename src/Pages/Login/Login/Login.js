@@ -115,10 +115,10 @@ const Login = () => {
         </Box>
         {user.email && (
           <Alert severity="success">
-            This is a success alert — check it out!
+             Login Successfully
           </Alert>
         )}
-        {authError && <Alert severity="error">{authError}</Alert>}
+        {authError && <Alert sx={{mt: 3}} severity="error">{authError}</Alert>}
         </Box>
         </Grid>
       </Grid>
